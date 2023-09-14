@@ -3,8 +3,8 @@ import * as React from 'react';
 import CartList, {RouterCartListProps} from '../screens/cartList';
 import CartDetail from '../screens/cartDetail';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Text} from 'react-native';
 import {NavigatorScreenParams} from '@react-navigation/native';
+import {Color} from '../utils/color';
 
 export type RouterMainStackProps = {
   CartList: NavigatorScreenParams<RouterCartListProps>;
@@ -20,7 +20,7 @@ const Stack = createStackNavigator<RouterMainStackProps>();
 
 const MainStack = () => {
   return (
-    <Stack.Navigator initialRouteName="CartList">
+    <Stack.Navigator>
       <Stack.Screen name="CartList" component={CartList} />
       <Stack.Screen
         name="CartDetail"
@@ -28,10 +28,8 @@ const MainStack = () => {
         options={{
           title: 'Cart Detail',
           headerStyle: {
-            backgroundColor: '#f4511e',
+            backgroundColor: Color.whiteSmoke,
           },
-          // eslint-disable-next-line react/no-unstable-nested-components
-          headerLeft: () => <Text>Kembali</Text>,
         }}
       />
     </Stack.Navigator>

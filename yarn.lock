@@ -1525,6 +1525,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@react-native-community/checkbox@^0.5.16":
+  "integrity" "sha512-j4fmWe77EAayGnKJ52BljlN8apLT3xjxG/pJOA6HZ4ew63FiXmnY7VtxTzmvDKgSPrETdQc2lmx5mdXTAufJnw=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/checkbox/-/checkbox-0.5.16.tgz"
+  "version" "0.5.16"
+
 "@react-native-community/cli-clean@^10.1.1":
   "integrity" "sha512-iNsrjzjIRv9yb5y309SWJ8NDHdwYtnCpmxZouQDyOljUdC9MwdZ4ChbtA4rwQyAwgOVfS9F/j56ML3Cslmvrxg=="
   "resolved" "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-10.1.1.tgz"
@@ -6426,11 +6431,6 @@
   "resolved" "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
   "version" "1.3.1"
 
-"react-native-radio-buttons-group@^3.0.3":
-  "integrity" "sha512-T2uKaJCQF9SbdJcoM03T695XgXxcw/X+5xV5SOsBypPhSfdmAvdzNwlfeylhUUj3kZcvMCLgD4pcRsxkWePNVw=="
-  "resolved" "https://registry.npmjs.org/react-native-radio-buttons-group/-/react-native-radio-buttons-group-3.0.3.tgz"
-  "version" "3.0.3"
-
 "react-native-reanimated@^3.5.1":
   "integrity" "sha512-ZBTOKibTn1IR5IaoQkpPCibuao5SjXR6Pzx+KHM50wrvBnL1PecsnQjmL2VEj8hbwshrzgRGgGt1XM82DKrykw=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-3.5.1.tgz"
@@ -6470,7 +6470,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.42.0", "react-native@>=0.57", "react-native@0.71.8":
+"react-native@*", "react-native@>= 0.62", "react-native@>=0.42.0", "react-native@>=0.57", "react-native@0.71.8":
   "integrity" "sha512-ftMAuhpgTkbHU9brrqsEyxcNrpYvXKeATY+if22Nfhhg1zW+6wn95w9otwTnA3xHkljPCbng8mUhmmERjGEl7g=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.8.tgz"
   "version" "0.71.8"

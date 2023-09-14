@@ -4,4 +4,5 @@ export interface CartListType {
   quantity: number;
   price: number;
   thumbnailUrl: string;
+  isChecked?: boolean;
 }

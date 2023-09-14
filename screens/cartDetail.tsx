@@ -1,30 +1,57 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View, Image} from 'react-native';
 import {Color} from '../utils/color';
-import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
-import {rupiahFormat} from '../utils/formats';
+import {Text} from 'react-native';
+import {RouteProp, useRoute} from '@react-navigation/native';
 import {RouterMainStackProps} from '../stack/mainStack';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-// import RadioGroup from 'react-native-radio-buttons-group';
-// import {useNavigation} from '@react-navigation/native';
-// import {MainStackNavigationProp} from '../stack/routerTypes';
+import {rupiahFormat} from '../utils/formats';
 
 type CartDetailRouteProp = RouteProp<RouterMainStackProps, 'CartDetail'>;
 
 const CartList = () => {
-  // const navigation = useNavigation<MainStackNavigationProp>(); //! INI BIKIN ERROR
   const {params} = useRoute<CartDetailRouteProp>();
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Image source={{uri: params.thumbnail}} />
+        <Image
+          source={{
+            uri: params.thumbnail,
+          }}
+          style={styles.thumbnailSize}
+        />
+        <View style={styles.padding}>
+          <Text style={styles.name}>{params.name}</Text>
+          <Text style={styles.price}>
+            Harga: {rupiahFormat.format(params.price)}
+          </Text>
+          <View style={styles.divider} />
+          <Text style={styles.qty}>Quantity: {params.quantity}</Text>
+          <Text style={styles.qty}>
+            Grand Total: {rupiahFormat.format(params.price * params.quantity)}
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  header: {
+    width: '100%',
+    height: 50,
+    backgroundColor: Color.whiteSmoke,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  title: {fontWeight: '600', fontSize: 14},
+  padding: {padding: 12},
+  thumbnailSize: {height: 250, width: '100%'},
+  name: {fontWeight: 'bold', fontSize: 32},
+  price: {fontWeight: '600', fontSize: 24},
+  qty: {fontWeight: 'bold', fontSize: 16},
+
   fontBold: {fontWeight: 'bold'},
   footer: {
     flexDirection: 'row',
@@ -32,9 +59,8 @@ const styles = StyleSheet.create({
     paddingTop: 16,
   },
   container: {
-    marginVertical: 32,
-    paddingHorizontal: 16,
     flex: 1,
+    paddingBottom: 99,
   },
   sectionTitle: {fontSize: 24, fontWeight: 'bold'},
   dividerHeader: {
@@ -45,6 +71,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     paddingTop: 12,
+    marginBottom: 12,
     borderBottomWidth: 1,
     borderBottomColor: Color.chineseSilver,
   },
